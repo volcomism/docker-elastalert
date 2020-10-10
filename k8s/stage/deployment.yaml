@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: elastalert
+  namespace: elastalert
+  labels:
+    app: elastalert
+spec:
+  selector:
+    matchLabels:
+      app: elastalert
+  replicas: 1
+  revisionHistoryLimit: 3
+  minReadySeconds: 10
+  template:
+    metadata:
+      labels:
+        app: elastalert
+    spec:
+      containers:
+      - name: elastalert
+        image: volcomism/elastalert:{{VERSION}}
+        imagePullPolicy: Always
+      nodeSelector:
+        public: "false"
