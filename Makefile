@@ -1,4 +1,4 @@
-v ?= v0.2.0b2
+v ?= python3
 
 all: build
 

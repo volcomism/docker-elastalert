@@ -1,3 +1,5 @@
+# NOTE: This config is used when testing a rule
+
 # The elasticsearch hostname for metadata writeback
 # Note that every rule can have its own elasticsearch host
 es_host: localhost
